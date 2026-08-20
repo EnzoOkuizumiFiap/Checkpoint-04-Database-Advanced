@@ -1,3 +1,35 @@
+/*
+QUESTÃO 07 — Cursor no Package: Itens de um Pedido (10 pontos)
+
+Adicione ao body do package pkg_pedidos a procedure:
+
+listar_itens_pedido(p_cod_pedido IN NUMBER)
+
+que:
+
+a) Declare um cursor explícito c_itens que faça JOIN entre
+ITEM_PEDIDO e PRODUTO trazendo:
+
+- COD_ITEM_PEDIDO
+- NOM_PRODUTO
+- QTD_ITEM
+- VAL_UNITARIO_ITEM
+- VAL_DESCONTO_ITEM
+- Valor líquido calculado:
+  (QTD_ITEM * VAL_UNITARIO_ITEM - VAL_DESCONTO_ITEM)
+
+b) Percorra o cursor com um LOOP e exiba cada linha
+com DBMS_OUTPUT.PUT_LINE.
+
+c) Ao final do loop, exiba o total geral dos itens.
+
+d) Se o cursor não retornar nenhum registro, exiba:
+Pedido sem itens cadastrados.
+
+e) Dispare pedido_nao_encontrado.
+*/
+
+
 PROCEDURE listar_itens_pedido(p_cod_pedido IN NUMBER) IS
 
     CURSOR c_itens IS
